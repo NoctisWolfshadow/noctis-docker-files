@@ -1,0 +1,12 @@
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    container_name: pgadmin
+    # Ports can be changed as wished
+    ports:
+      - "3030:80"
+    # Set your own environment variables
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
