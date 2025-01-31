@@ -12,6 +12,7 @@ sh get-docker.sh
 Download or copy the File from this repository. Then edit it to fit your needs.
 I will also provide how i use them normally further down below.
 If you need multiple of these modules you should merge these files together.
+Also if you merge them define CONTAINER_NAME in the file. It makes things easier.
 
 ## Run Docker Compose
 
@@ -22,3 +23,16 @@ It could look like this:
 ```bash
 docker compose -f <FILENAME> up -d
 ```
+
+### Postgres
+
+If you started the Postgres container in detached mode you can access it with
+the following command:
+
+```bash
+docker exec -it <CONTAINER_NAME|CONTAINER_ID> psql -U postgres -d <DATABASE>
+```
+
+You just need to replace the CONTAINER_NAME with the name of the container or
+the CONTAINER_ID with the ID of the container.
+You can look up the CONTAINER_ID with the command `docker ps`.
